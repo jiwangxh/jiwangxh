@@ -1,0 +1,19 @@
+.headcaption{
+    text-align: center;
+}
+
+.photoalbum{
+    width: 100%;
+    height: auto;
+}
+
+.photodescribe{
+    width: 100%;
+    height: auto;
+    margin-top: 35px;
+}
+
+.photodescribe_noe{
+    width: 100%;
+    height: auto;
+}
