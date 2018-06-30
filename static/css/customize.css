@@ -7,17 +7,22 @@
     background-color: #a6e1ec;
 }
 
+.bottom {
+    background-color: #0f0f0f;
+}
 
 .copyright{
     text-align: center;
-    background-color: #5e5e5e;
+    background-color: #0f0f0f;
     height: 45px;
     line-height: 45px;
     color: #ffffff;
 }
-.bottom {
-    background-color: #5e5e5e;
-}
-.leaflet{
 
+.leaflet{
+    text-align: center;
+    background-color: #0f0f0f;
+    height: 45px;
+    line-height: 45px;
+    color: #ffffff;
 }
