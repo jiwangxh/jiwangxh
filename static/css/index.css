@@ -1,4 +1,7 @@
 
+.photoalbum{
+    margin: 0 0 65px 0;
+}
 
 .marketing .col-lg-4 {
   margin-bottom: 20px;
@@ -12,9 +15,13 @@
   margin-left: 10px;
 }
 
-.photoalbum{
-    margin: 0 0 65px 0;
+/*display marketing in none, start-----------------*/
+.marketing .col-lg-4 .particular{
+    display: none;
 }
+/*display marketing in none, stop-----------------*/
+
+
 
 
 .featurette-divider {

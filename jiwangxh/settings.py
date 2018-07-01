@@ -77,8 +77,12 @@ WSGI_APPLICATION = 'jiwangxh.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'jiwangxh',
+        'USER': 'root',
+        'PASSWORD': 'LItong1998',
+        'HOST': '',
+        'PORT': '',
     }
 }
 

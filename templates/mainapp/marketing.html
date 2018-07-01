@@ -1,0 +1,36 @@
+{% extends './base.html' %}
+{% load static %}
+
+
+{% block link %}
+    <link href="{% static 'css/global.css' %}" rel="stylesheet" type="text/css">
+{% endblock link %}
+
+
+{% block page-header %}
+    <div class="page-header headertitle">
+       <h1>某某学习小组</h1>
+    </div>
+{% endblock %}
+
+
+{% block mainbody %}
+    <div class="row mt_content">
+    {% for mt in marketing %}
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive center-block" src="/static/media/{{ mt.mt_images }}" alt="Generic placeholder image">
+        </div>
+        <div class="col-md-7">
+            <h2 class="featurette-heading">{{ mt.mt_title }}<span class="text-muted">It'll blow your mind.</span></h2>
+            <p class="lead">{{ mt.mt_content }}</p>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock mainbody %}
+
+
+{% block centerblock %}
+    <div class="row center-block">
+
+    </div>
+{% endblock centerblock %}

@@ -8,21 +8,21 @@
 }
 
 .bottom {
-    background-color: #0f0f0f;
+    background-color: #f8f8f8;
 }
-
-.copyright{
-    text-align: center;
-    background-color: #0f0f0f;
-    height: 45px;
-    line-height: 45px;
-    color: #ffffff;
-}
-
 .leaflet{
     text-align: center;
-    background-color: #0f0f0f;
     height: 45px;
     line-height: 45px;
-    color: #ffffff;
+    color: #000000;
 }
+
+.leaflet .row .col-lg-4 .friendly {
+    padding:0px;
+    margin: 0px;
+    list-style: none;
+    text-decoration: none;
+}
+
+
+
