@@ -20,7 +20,7 @@ class PageManage(models.Model):
 class GlobalTitle(models.Model):
     gt_id=models.IntegerField(primary_key=True)
     gt_name=models.CharField(max_length=10,unique=True)
-    gt_logo=models.ImageField(default='null',upload_to='globaltitle')
+    gt_logo=models.ImageField(upload_to='globaltitle',default='')
     gt_content=models.CharField(max_length=100)
     def __unicode__(self):
         return u'%s' %self.mt_name
@@ -31,7 +31,7 @@ class GlobalTitle(models.Model):
 class GlobalAdvert(models.Model):
     ga_id=models.IntegerField(primary_key=True)
     ga_name=models.CharField(max_length=10,unique=True)
-    ga_images=models.ImageField(default='null',upload_to='globaladvert')
+    ga_images=models.ImageField(upload_to='globaladvert',default='')
     ga_content=models.CharField(max_length=100)
     def __unicode__(self):
         return u'%s' %self.ga_name
@@ -69,8 +69,8 @@ class Marketing(models.Model):
     mt_name=models.CharField(max_length=10,unique=True)
     mt_title=models.CharField(max_length=20)
     mt_content=models.TextField(default="Nothing there Nothing there Nothing there Nothing there Nothing there Nothing there")
-    mt_icon=models.ImageField(upload_to='marketing')
-    mt_images=models.ImageField(upload_to='marketing')
+    mt_icon=models.ImageField(upload_to='marketing',default='')
+    mt_images=models.ImageField(upload_to='marketing',default='')
     def __unicode__(self):
         return u'%s' %self.mt_name
     class Meta:
