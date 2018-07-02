@@ -1,0 +1,75 @@
+{% extends './base.html' %}
+{% load static %}
+{% block link %}
+    <link href="{% static 'css/global.css' %}" rel="stylesheet" type="text/css">
+{% endblock link %}
+
+
+{% block container %}
+    <div class="container cont_register">
+        {% block page-header %}
+        <div class="page-header">
+            <div class="row">
+                <div class="col-lg-5 col-lg-offset-4">
+                    <h1>用户中心</h1>
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+
+        {% block mainbody %}
+        <div class="row">
+            <div class="col-lg-5 col-lg-offset-3">
+                <form action="/userinfo/" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="password">邮箱:</label>
+                        <input type="email" class="form-control pass_input" name="email" id="email" value="{{ user.uemail }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">手机号:</label>
+                        <input type="text" class="form-control pass_input" name="phone" id="phone" value="{{ user.uphone }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">通信地址:</label>
+                        <input type="text" class="form-control pass_input" name="address" id="address" value="{{ user.uaddress }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">头像:</label>
+                        <img  src="/static/media/{{ user.uicon }}" width="140" height="140" alt="用户头像">
+                        <input type="file" name="icon" id="icon" value="{{ user.uicon }}">
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <button type="submit" value="提交" name="" class="btn btn-default">保存</button>
+                        </div>
+                        <div class="col-lg-3 col-lg-offset-6">
+                            <button class="btn btn-default"><a href="{% url 'index' %}">取消</a></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        {% endblock mainbody %}
+
+
+
+        {% block centerblock %}
+        <div class="row center-block">
+
+        </div>
+        {% endblock centerblock %}
+    </div>
+{% endblock container %}
+
+
+
+
+
+
+
+
+
+
+{% block footer %}
+{% endblock footer %}

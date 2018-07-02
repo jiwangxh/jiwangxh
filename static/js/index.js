@@ -9,17 +9,15 @@ $(function () {
     $('.carousel').carousel()
 //marketing particular display, hover show start -----------------------
     $(".marketing .col-lg-4 p a").hover(function () {
-        $(this).parent().next().toggle(800)
-    },function () {
-        $(this).parent().next().toggle(800)
-    })
+        $(this).parent().next().stop().toggle(800)
+    } )
 //marketing particular display, hover show stop -----------------------
 
 //marketing images animate start---------------------------------------
     $(".marketing .col-lg-4 img").hover(function () {
-        $(this).animate({"width":"+=20px","height":"+=20px"},400)
+        $(this).stop().animate({"width":"170px","height":"170px"},200)
     },function () {
-        $(this).animate({"width":"-=20px","height":"-=20px"},400)
+        $(this).stop().animate({"width":"140px","height":"140px"},200)
     })
 //marketing images animate stop---------------------------------------
 

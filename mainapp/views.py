@@ -24,6 +24,7 @@ def index(request):
     featurettethree=Featurette.objects.filter(ft_id=3)
     #featurette make data stop
 
+    user=request.session
 
     centext = {
         # photolbum star
@@ -41,6 +42,8 @@ def index(request):
         'featuretteone': featuretteone,
         'featurettetwo': featurettetwo,
         'featurettethree': featurettethree,
+
+        'user':'user'
 
     }
 

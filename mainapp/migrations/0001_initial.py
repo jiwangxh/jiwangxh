@@ -34,7 +34,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('ga_id', models.IntegerField(serialize=False, primary_key=True)),
                 ('ga_name', models.CharField(unique=True, max_length=10)),
-                ('ga_logo', models.ImageField(default=b'null', upload_to=b'globaladvert')),
+                ('ga_images', models.ImageField(default=b'', upload_to=b'globaladvert')),
                 ('ga_content', models.CharField(max_length=100)),
             ],
             options={
@@ -53,7 +53,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('gt_id', models.IntegerField(serialize=False, primary_key=True)),
                 ('gt_name', models.CharField(unique=True, max_length=10)),
-                ('gt_logo', models.ImageField(default=b'null', upload_to=b'globaltitle')),
+                ('gt_logo', models.ImageField(default=b'', upload_to=b'globaltitle')),
                 ('gt_content', models.CharField(max_length=100)),
             ],
             options={
@@ -75,8 +75,8 @@ class Migration(migrations.Migration):
                 ('mt_name', models.CharField(unique=True, max_length=10)),
                 ('mt_title', models.CharField(max_length=20)),
                 ('mt_content', models.TextField(default=b'Nothing there Nothing there Nothing there Nothing there Nothing there Nothing there')),
-                ('mt_icon', models.ImageField(upload_to=b'marketing')),
-                ('mt_images', models.ImageField(upload_to=b'marketing')),
+                ('mt_icon', models.ImageField(default=b'', upload_to=b'marketing')),
+                ('mt_images', models.ImageField(default=b'', upload_to=b'marketing')),
             ],
             options={
                 'db_table': 'marketing',
