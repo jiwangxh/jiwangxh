@@ -65,11 +65,11 @@
 
                 <ul class="nav navbar-nav navbar-right">
                     {% if user.is_authenticated %}
-                        <li><a href="{% url 'userinfo' %}"><span class="glyphicon glyphicon-user"></span>用户中心</a></li>
-                        <li><a href="{% url 'logout' %}"><span class="glyphicon glyphicon-log-out"></span>注销</a></li>
+                        <li><a href="{% url 'userinfo' %}?next={{ request.path }}"><span class="glyphicon glyphicon-user"></span>用户中心</a></li>
+                        <li><a href="{% url 'logout' %}?next={{ request.path }}"><span class="glyphicon glyphicon-log-out"></span>注销</a></li>
                     {% else %}
-                        <li><a href="{% url 'register' %}"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
-                        <li><a href="{% url 'login' %}"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
+                        <li><a href="{% url 'register' %}?next={{ request.path }}"><span class="glyphicon glyphicon-user"></span> 注册</a></li>
+                        <li><a href="{% url 'login' %}?next={{ request.path }}"><span class="glyphicon glyphicon-log-in"></span> 登录</a></li>
                     {% endif %}
                 </ul>
             </div>

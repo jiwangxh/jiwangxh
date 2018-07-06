@@ -43,11 +43,10 @@ def index(request):
         'featurettetwo': featurettetwo,
         'featurettethree': featurettethree,
 
-        'user':'user'
 
     }
-
     return render(request, 'mainapp/index.html', centext)
+
 
 def marketing(request,marketingname):
     marketing=Marketing.objects.filter(mt_name=marketingname)

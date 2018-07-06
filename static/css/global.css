@@ -12,6 +12,32 @@
 }
 
 
+/*----register-------*/
+
+.errorlist {
+            color: red;
+        }
+
+/*----register-------*/
+
+
+/*----login-------*/
+.errorlist{
+    color: red;
+}
+.odl{
+    float: left;
+}
+.odr{
+    float: right;
+}
+
+
+.login_null{
+    padding-bottom: 150px;
+}
+
+/*----login-------*/
 
 
 

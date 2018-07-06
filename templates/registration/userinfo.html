@@ -1,0 +1,58 @@
+{% extends './base.html' %}
+{% load static %}
+
+{% block title %}
+    <title>用户中心</title>
+{% endblock %}
+
+{% block link %}
+    <link rel="stylesheet" href="{% static 'css/global.css' %}" type="text/css">
+{% endblock %}
+
+
+{% block container %}
+    <div class="container cont_register">
+        {% block page-header %}
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-lg-4 col-lg-offset-4">
+                        <h1>用户中心</h1>
+                    </div>
+                </div>
+            </div>
+        {% endblock page-header %}
+
+        {% block mainbody %}
+            <div class="row">
+                <div class="col-lg-2 col-lg-offset-4">
+                    <h1 class="logo"><a href="{% url 'index' %}">返回首页</a></h1>
+                    {% if user.is_authenticated %}
+                        <p>你已登录，欢迎你：<a href="">{{ user.username }}</a></p>
+                        <button class="btn btn-default">
+                            <a href="{% url 'logout' %}?next={{ request.path }}">注销登录</a>
+                        </button>
+                        <button class="btn btn-default">
+                            <a href="{% url 'password_change' %}?=next{{ request.path }}">g</a>
+                        </button>
+                    {% else %}
+                        <button class="btn btn-default">
+                            <a href="{% url 'login' %}?next={{ request.path }}">登录</a>
+                        </button>
+                        <button class="btn btn-default"><a href="{% url 'register' %}">注册</a></button>
+                    {% endif %}
+                </div>
+            </div>
+        {% endblock mainbody %}
+
+        {% block centerblock %}
+            <div class="row center-block login_null">
+
+            </div>
+        {% endblock centerblock %}
+    </div>
+{% endblock container %}
+
+
+{% block footer %}
+{% endblock footer %}
+
