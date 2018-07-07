@@ -1,0 +1,42 @@
+{% extends './base.html' %}
+{% load static %}
+
+
+{% block link %}
+    <link href="{% static 'css/global.css' %}" rel="stylesheet" type="text/css">
+{% endblock %}
+
+
+{% block page-header %}
+    <div class="page-header">
+        <div class="row">
+            <div class="col-lg-3"><img class="img-responsive" src="/static/media/one.png" alt=""></div>
+            <div class="col-lg-3"><img class="img-responsive" src="/static/media/one.png" alt=""></div>
+            <div class="col-lg-3"><img class="img-responsive" src="/static/media/one.png" alt=""></div>
+            <div class="col-lg-3"><img class="img-responsive" src="/static/media/one.png" alt=""></div>
+        </div>
+    </div>
+{% endblock page-header %}
+
+
+{% block mainbody %}
+    <hr class="featurette-divider">
+    <div class="row featurette">
+        <div class="col-md-5">
+            <img class="featurette-image img-responsive center-block" src="{% static 'images/Introduction.png' %}" alt="Generic placeholder image">
+        </div>
+        <div class="col-md-7 summary">
+            <h2 class="featurette-heading">Headder</h2>
+            <p class="lead">这是一个扫雷小游戏，仅支持桌面电脑使用，且最小分辨率为1080</p>
+             <p><a class="btn btn-default" href="{% url 'mineclearnce' %}"target="_blank" role="button">开始游戏 &raquo;</a></p>
+        </div>
+    </div>
+
+{% endblock mainbody %}
+
+
+{% block centerblock %}
+    <div class="row center-block">
+
+    </div>
+{% endblock centerblock %}

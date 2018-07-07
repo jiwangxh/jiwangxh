@@ -32,7 +32,7 @@
                             <a href="{% url 'logout' %}?next={{ request.path }}">注销登录</a>
                         </button>
                         <button class="btn btn-default">
-                            <a href="{% url 'password_change' %}?=next{{ request.path }}">g</a>
+                            <a href="{% url 'password_change' %}?=next{{ request.path }}">修改密码</a>
                         </button>
                     {% else %}
                         <button class="btn btn-default">

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>扫雷一下，你就知道</title>
+
+	<link rel="stylesheet" href="{% static 'css/minclearance.css' %}">
+</head>
+<body onresize="WindowSize($('.wrapper'));prompt()">
+	<div class="wrapper">
+		<span class="Prompt">检测到您的屏幕小于1080分辨率，推荐在1080屏幕下进行游戏</span>
+		<button class="start">
+			开始游戏
+		</button>
+		<button class="over">
+			结束游戏
+		</button>
+		<div class="box"></div>
+		<p class="prompt">当前剩余雷数：<span></span></p>
+		<p class="prompt1">当前剩余小旗：<span></span></p>
+		<div class="overBox">
+			!! You Lost !!
+			<button class="Restart">
+				再试一下
+			</button>
+		</div>
+		<div class="GameWin">
+			Very Good	<br>	
+			!! you win !!<br>
+			<button class="Restart">
+				再玩一次
+			</button>
+		</div>
+	</div>
+    <script src="{% static 'js/jquery-3.2.1.min.js' %}" async></script>
+    <script src="{% static 'js/minclearance.js' %}"></script>
+</body>
+</html>

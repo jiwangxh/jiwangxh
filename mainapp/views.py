@@ -55,3 +55,11 @@ def marketing(request,marketingname):
     }
 
     return render(request, 'mainapp/marketing.html',centext)
+
+
+
+def production(request):
+    return render(request,'mainapp/production.html')
+
+def mineclearnce(request):
+    return render(request,'mainapp/mineclearance.html')
