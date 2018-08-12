@@ -101,3 +101,19 @@ class HomePageContent(models.Model):
     hc_featurette=models.ForeignKey(Featurette)
 
 
+
+
+
+
+#Culture Timeline table start
+class Timeline(models.Model):
+    fl_id=models.IntegerField(primary_key=True)
+    tl_name=models.CharField(max_length=100,unique=True)
+    tl_headertitle=models.CharField(max_length=100,default='Surprising Headline Right Here')
+    tl_releasetime=models.CharField(max_length=20,default='3 hours ago')
+    tl_content=models.CharField(max_length=1000,default='Lorem Ipsum and such.')
+
+    def __unicode__(self):
+        return u'%s'%self.tl_name
+
+

@@ -1,0 +1,211 @@
+{% extends "./base.html" %}
+{% load static %}
+
+
+{% block title %}
+<title>机电计算机网络协会</title>
+{% endblock title %}
+
+{% block link %}
+    <link rel="stylesheet" href="{% static 'css/culture.css' %}" rel="stylesheet" type="text/css">
+{% endblock link %}
+
+
+<!--head start page-header-->
+{% block page-header %}
+    <div class="page-header">
+        <img src="/static/images/culturepageheader.jpg" alt="" class="img-responsive">
+    </div>
+{% endblock %}
+<!--head end page-header-->
+
+
+
+{% block mainbody %}
+    <div class="row center-container-hx">
+        <ul class="timeline">
+            <li>
+                <div class="tldate">Apr 2014</div>
+            </li>
+
+            <li>
+                <div class="tl-circ"></div>
+                <div class="timeline-panel">
+                    {% for tle in timelineeight %}
+                    <div class="tl-heading">
+                        <h4>{{ tle.tl_headertitle }}</h4>
+                        <p>
+                            <small class="text-muted">
+                                <i class="glyphicon glyphicon-time">
+                                </i> {{ tle.tl_releasetime }}
+                            </small>
+                        </p>
+                    </div>
+                    <div class="tl-body">
+                        <p>{{ tle.tl_content }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </li>
+
+            <li class="timeline-inverted">
+                <div class="tl-circ"></div>
+                <div class="timeline-panel">
+                    {% for tls in timelineseven %}
+                    <div class="tl-heading">
+                        <h4>{{ tls.tl_headertitle }}</h4>
+                        <p>
+                            <small class="text-muted">
+                                <i class="glyphicon glyphicon-time">
+                                </i> {{ tls.tl_releasetime }}
+                            </small>
+                        </p>
+                    </div>
+                    <div class="tl-body">
+                        <p>{{ tls.tl_content }} %}</p>
+                        <p>Y'know, with more sunlight.</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </li>
+
+            <li>
+                <div class="tldate">Mar 2014</div>
+            </li>
+
+            <li>
+                <div class="tl-circ"></div>
+                <div class="timeline-panel">
+                    {% for tlsi in timelinesix %}
+                    <div class="tl-heading">
+                        <h4>{{ tlsi.tl_headertitle }}</h4>
+                        <p>
+                            <small class="text-muted">
+                                <i class="glyphicon glyphicon-time">
+                                </i> {{ tlsi.tl_releasetime }}
+                            </small>
+                        </p>
+                    </div>
+                    <div class="tl-body">
+                        <p>{{ tlsi.tl_content }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </li>
+
+            <li class="timeline-inverted">
+                <div class="timeline-panel">
+                    {% for tlfi in timelinefive %}
+                    <div class="tl-heading">
+                        <h4>{{ tlfi.tl_headertitle }}</h4>
+                        <p>
+                            <small class="text-muted">
+                            <i class="glyphicon glyphicon-time">
+
+                            </i> {{ tlfi.tl_releasetime }}
+                            </small>
+                        </p>
+                    </div>
+                    <div class="tl-body">
+                        <p>{{ tlfi.tl_content }}<a href="http://lorempixel.com/">lorempixel</a>.</p>
+                        <p>
+                            <img src="http://lorempixel.com/600/300/nightlife/" alt="lorem pixel">
+                        </p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </li>
+
+            <li>
+                <div class="tl-circ"></div>
+                <div class="timeline-panel">
+                    {% for tlfo in timelinefour %}
+                    <div class="tl-heading">
+                        <h4>{{ tlfo.tl_headertitle }}</h4>
+                        <p>
+                            <small class="text-muted">
+                            <i class="glyphicon glyphicon-time">
+                            </i> {{ tlfo.tl_releasetime }}
+                            </small>
+                        </p>
+                    </div>
+                    <div class="tl-body">
+                        <p>{{ tlfo.tl_content }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </li>
+
+            <li>
+                <div class="timeline-panel noarrow">
+                    {% for tlth in timelineothree %}
+                    <div class="tl-heading">
+                        <h4>{{ tlth.tl_headertitle }}</h4>
+                        <p>
+                            <small class="text-muted">
+                                <i class="glyphicon glyphicon-time">
+                                </i> {{ tlth.tl_releasetime }}
+                            </small>
+                        </p>
+                    </div>
+                    <div class="tl-body">
+                        <p>{{ tlth.tl_content }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </li>
+
+            <li>
+                <div class="tldate">Feb 2014</div>
+            </li>
+
+            <li class="timeline-inverted">
+                <div class="tl-circ"></div>
+                <div class="timeline-panel">
+                    {% for tltw in timelinetwo %}
+                    <div class="tl-heading">
+                        <h4>{{ tltw.tl_headertitle }}</h4>
+                        <p>
+                            <small class="text-muted">
+                                <i class="glyphicon glyphicon-time">
+                                </i> {{ tltw.tl_releasetime }}
+                            </small>
+                        </p>
+                    </div>
+                    <div class="tl-body">
+                        <p>{{ tltw.tl_content }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </li>
+
+            <li>
+                <div class="tl-circ"></div>
+                <div class="timeline-panel">
+                    {% for tlon in timelineone %}
+                    <div class="tl-heading">
+                        <h4>{{ tlon.tl_headertitle }}</h4>
+                        <p>
+                            <small class="text-muted">
+                                <i class="glyphicon glyphicon-time">
+                                </i> {{ tlon.tl_releasetime }}
+                            </small>
+                        </p>
+                    </div>
+                    <div class="tl-body">
+                        <p>{{ tlon.tl_content }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </li>
+        </ul>
+    </div>
+{% endblock mainbody %}
+
+
+
+{% block centerblock %}
+    <div class="row center-block">
+
+    </div>
+{% endblock centerblock %}

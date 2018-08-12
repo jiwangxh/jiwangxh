@@ -57,9 +57,40 @@ def marketing(request,marketingname):
     return render(request, 'mainapp/marketing.html',centext)
 
 
+#----Community culture
+def culture(request):
+    # TimeLine make data start
+    timelineone = Timeline.objects.filter(fl_id=1)
+    timelinetwo = Timeline.objects.filter(fl_id=2)
+    timelineothree = Timeline.objects.filter(fl_id=3)
+    timelinefour = Timeline.objects.filter(fl_id=4)
+    timelinefive = Timeline.objects.filter(fl_id=5)
+    timelinesix = Timeline.objects.filter(fl_id=6)
+    timelineseven = Timeline.objects.filter(fl_id=7)
+    timelineeight = Timeline.objects.filter(fl_id=8)
+
+    context = {
+        'timelineone': timelineone,
+        'timelinetwo': timelinetwo,
+        'timelineothree': timelineothree,
+        'timelinefour': timelinefour,
+        'timelinefive': timelinefive,
+        'timelinesix': timelinesix,
+        'timelineseven': timelineseven,
+        'timelineeight': timelineeight,
+    }
+    return render(request,'mainapp/culture.html',context)
+
+
 
 def production(request):
     return render(request,'mainapp/production.html')
 
 def mineclearnce(request):
     return render(request,'mainapp/mineclearance.html')
+
+
+
+#------joinus-------
+def joinus(request):
+    return render(request,'mainapp/joinus.html')
