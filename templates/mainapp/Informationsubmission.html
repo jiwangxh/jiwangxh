@@ -1,0 +1,23 @@
+{% extends "mainapp/joinus.html" %}
+{% load static %}
+
+{% block title %}
+<title>{% for tt in title %}{{ tt.gt_content }}{% endfor %}</title>
+{% endblock title %}
+
+
+
+
+
+
+{% block form %}
+    <p>谢谢你！已提交成功！</p>
+    <a href="{% url 'index' %}">返回同首页</a>
+{% endblock %}
+
+
+{% block centerblock %}
+    <div class="row center-block">
+
+    </div>
+{% endblock centerblock %}

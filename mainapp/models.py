@@ -20,10 +20,10 @@ class PageManage(models.Model):
 class GlobalTitle(models.Model):
     gt_id=models.IntegerField(primary_key=True)
     gt_name=models.CharField(max_length=10,unique=True)
-    gt_logo=models.ImageField(upload_to='globaltitle',default='')
+    gt_logo=models.ImageField(upload_to='globaltitle',default="/static/media/globaltitle/logo.icon")
     gt_content=models.CharField(max_length=100)
     def __unicode__(self):
-        return u'%s' %self.mt_name
+        return u'%s' %self.gt_name
     class Meta:
         db_table='globaltitle'
 
@@ -107,7 +107,7 @@ class HomePageContent(models.Model):
 
 #Culture Timeline table start
 class Timeline(models.Model):
-    fl_id=models.IntegerField(primary_key=True)
+    tl_id=models.IntegerField(primary_key=True)
     tl_name=models.CharField(max_length=100,unique=True)
     tl_headertitle=models.CharField(max_length=100,default='Surprising Headline Right Here')
     tl_releasetime=models.CharField(max_length=20,default='3 hours ago')
@@ -117,3 +117,16 @@ class Timeline(models.Model):
         return u'%s'%self.tl_name
 
 
+
+#Joinus Data table start
+class JoinusData(models.Model):
+    jd_name = models.CharField(max_length=10, default='')
+    jd_phone = models.CharField(max_length=20, default='')
+    jd_professional = models.CharField(max_length=100, default='')
+    jd_interest = models.CharField(max_length=100, default='')
+
+    def __unicode__(self):
+        return u'%s'%self.jd_name
+
+    class Meta:
+        db_table='joinusdata'

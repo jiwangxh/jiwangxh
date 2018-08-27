@@ -1,9 +1,13 @@
-from django.shortcuts import render
+# -*- coding:utf-8 -*-
+from django.shortcuts import render, redirect
 from mainapp.models import *
 
 # Create your views here.
 
 def index(request):
+
+    #GlobalTitle make data start
+    title=GlobalTitle.objects.filter(gt_name="index")
 
     # photolbum make data start
     photolbumone = PhotoLbum.objects.filter(pl_id=1)
@@ -27,7 +31,11 @@ def index(request):
     user=request.session
 
     centext = {
-        # photolbum star
+
+        #globaltitle start
+        'title': title,
+
+        # photolbum start
         'photolbumone': photolbumone,
         'photolbumtwo': photolbumtwo,
         'photolbumthree': photolbumthree,
@@ -59,17 +67,25 @@ def marketing(request,marketingname):
 
 #----Community culture
 def culture(request):
+
+    #GlobalTitle make data start
+    title = GlobalTitle.objects.filter(gt_name="index")
+
     # TimeLine make data start
-    timelineone = Timeline.objects.filter(fl_id=1)
-    timelinetwo = Timeline.objects.filter(fl_id=2)
-    timelineothree = Timeline.objects.filter(fl_id=3)
-    timelinefour = Timeline.objects.filter(fl_id=4)
-    timelinefive = Timeline.objects.filter(fl_id=5)
-    timelinesix = Timeline.objects.filter(fl_id=6)
-    timelineseven = Timeline.objects.filter(fl_id=7)
-    timelineeight = Timeline.objects.filter(fl_id=8)
+    timelineone = Timeline.objects.filter(tl_id=1)
+    timelinetwo = Timeline.objects.filter(tl_id=2)
+    timelineothree = Timeline.objects.filter(tl_id=3)
+    timelinefour = Timeline.objects.filter(tl_id=4)
+    timelinefive = Timeline.objects.filter(tl_id=5)
+    timelinesix = Timeline.objects.filter(tl_id=6)
+    timelineseven = Timeline.objects.filter(tl_id=7)
+    timelineeight = Timeline.objects.filter(tl_id=8)
 
     context = {
+
+        #title start
+        'title':title,
+
         'timelineone': timelineone,
         'timelinetwo': timelinetwo,
         'timelineothree': timelineothree,
@@ -84,13 +100,55 @@ def culture(request):
 
 
 def production(request):
-    return render(request,'mainapp/production.html')
+
+    # GlobalTitle make data start
+    title = GlobalTitle.objects.filter(gt_name="index")
+
+    context = {
+        #title start
+        'title':title,
+    }
+
+    return render(request,'mainapp/production.html',context)
 
 def mineclearnce(request):
     return render(request,'mainapp/mineclearance.html')
 
 
 
-#------joinus-------
+#-------------
 def joinus(request):
-    return render(request,'mainapp/joinus.html')
+
+
+    # GlobalTitle make data
+    title = GlobalTitle.objects.filter(gt_name="index")
+
+
+    context = {
+        # title start
+        'title': title,
+    }
+
+
+    return render(request,'mainapp/joinus.html',context)
+
+
+def joinus_headle(request):
+
+    post = request.POST
+    fname = post.get("fullname")
+    fphone = post.get("phonenumber")
+    fprofessional = post.get("professional")
+    finterest = post.get("interest")
+
+    # 向数据库库写写数据
+    joinusdata = JoinusData()
+    joinusdata.jd_name = fname
+    joinusdata.jd_phone = fphone
+    joinusdata.jd_professional = fprofessional
+    joinusdata.jd_interest = finterest
+    joinusdata.save()
+
+
+    return render(request,'mainapp/Informationsubmission.html')
+

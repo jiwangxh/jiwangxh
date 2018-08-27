@@ -53,7 +53,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('gt_id', models.IntegerField(serialize=False, primary_key=True)),
                 ('gt_name', models.CharField(unique=True, max_length=10)),
-                ('gt_logo', models.ImageField(default=b'', upload_to=b'globaltitle')),
+                ('gt_logo', models.ImageField(default=b'/static/media/globaltitle/logo.icon', upload_to=b'globaltitle')),
                 ('gt_content', models.CharField(max_length=100)),
             ],
             options={
@@ -67,6 +67,19 @@ class Migration(migrations.Migration):
                 ('hc_advert', models.ForeignKey(to='mainapp.GlobalAdvert')),
                 ('hc_featurette', models.ForeignKey(to='mainapp.Featurette')),
             ],
+        ),
+        migrations.CreateModel(
+            name='JoinusData',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('jd_name', models.CharField(default=b'', max_length=10)),
+                ('jd_phone', models.CharField(default=b'', max_length=20)),
+                ('jd_professional', models.CharField(default=b'', max_length=100)),
+                ('jd_interest', models.CharField(default=b'', max_length=100)),
+            ],
+            options={
+                'db_table': 'joinusdata',
+            },
         ),
         migrations.CreateModel(
             name='Marketing',
@@ -99,6 +112,16 @@ class Migration(migrations.Migration):
             options={
                 'db_table': 'photolbum',
             },
+        ),
+        migrations.CreateModel(
+            name='Timeline',
+            fields=[
+                ('tl_id', models.IntegerField(serialize=False, primary_key=True)),
+                ('tl_name', models.CharField(unique=True, max_length=100)),
+                ('tl_headertitle', models.CharField(default=b'Surprising Headline Right Here', max_length=100)),
+                ('tl_releasetime', models.CharField(default=b'3 hours ago', max_length=20)),
+                ('tl_content', models.CharField(default=b'Lorem Ipsum and such.', max_length=1000)),
+            ],
         ),
         migrations.AddField(
             model_name='homepagecontent',

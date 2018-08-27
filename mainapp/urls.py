@@ -9,5 +9,6 @@ urlpatterns = [
     url(r'^culture/$',views.culture,name='culture'),
     url(r'^production/$', views.production,name='production'),
     url(r'^mineclearnce/$', views.mineclearnce,name='mineclearnce'),
-    url(r'joinus/$', views.joinus,name="joinus"),
+    url(r'^joinus/$', views.joinus,name="joinus"),
+    url(r'^joinus_headle/$', views.joinus_headle,name="joinus_headle"),
 ]

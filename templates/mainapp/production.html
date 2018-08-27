@@ -1,6 +1,10 @@
 {% extends './base.html' %}
 {% load static %}
 
+{% block title %}
+<title>{% for tt in title %}{{ tt.gt_content }}{% endfor %}</title>
+{% endblock title %}
+
 
 {% block link %}
     <link href="{% static 'css/global.css' %}" rel="stylesheet" type="text/css">

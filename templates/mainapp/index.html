@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-<title>机电计算机网络协会</title>
+<title>{% for tt in title %}{{ tt.gt_content }}{% endfor %}</title>
 {% endblock title %}
 
 {% block link %}

@@ -117,6 +117,7 @@ STATICFILES_DIRS = (
 )
 
 MEDIA_ROOT=os.path.join(BASE_DIR,'static/media/')
+# MEDIA_ROOT='/var/www/tiantian/static'
 
 MEDIA_URL='/static/media/'
 
