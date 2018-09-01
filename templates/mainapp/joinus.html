@@ -5,28 +5,17 @@
 <title>{% for tt in title %}{{ tt.gt_content }}{% endfor %}</title>
 {% endblock title %}
 
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/joinus.css' %}" rel="stylesheet" type="text/css">
+{% endblock link %}
 
 
 <!--head start page-header-->
 {% block page-header %}
     <div class="page-header">
-        <div class="row flaunting">
-            <div class="col-lg-3">
-                <img src="/static/media/marketing/002.jpg" alt="" class="img-responsive">
-            </div>
-
-            <div class="col-lg-3">
-                <img src="/static/media/photolbum/004.jpg" alt="" class="img-responsive">
-            </div>
-
-            <div class="col-lg-3">
-                <img src="/static/media/marketing/003.jpg" alt="" class="img-responsive">
-            </div>
-
-            <div class="col-lg-3">
-                <img src="/static/media/marketing/002.jpg" alt="" class="img-responsive">
-            </div>
-        </div>
+	<div class="row flaunting">
+	    <img src="/static/images/joinus/header.png" alt="" class="img-responsive">
+	 </div>
     </div>
 {% endblock %}
 <!--head end page-header-->
@@ -34,7 +23,8 @@
 
 
 {% block mainbody %}
-    <div class="row center-container-hx">
+    <hr class="featurette-divider">
+    <div class="row center-container-hx dataform">
         <div class="col-lg-7">
             {% block form %}
             <form action="{% url 'joinus_headle' %}" method="post">
@@ -60,7 +50,7 @@
             {% endblock form %}
         </div>
         <div class="col-lg-5">
-            <img src="/static/media/marketing/002.jpg" alt="" class="img-responsive">
+            <img src="/static/images/joinus/two-dimension.jpg" alt="" class="img-responsive">
         </div>
     </div>
 {% endblock mainbody %}

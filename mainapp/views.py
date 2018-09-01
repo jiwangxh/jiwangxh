@@ -98,15 +98,21 @@ def culture(request):
     return render(request,'mainapp/culture.html',context)
 
 
-
+#---------------
 def production(request):
 
     # GlobalTitle make data start
     title = GlobalTitle.objects.filter(gt_name="index")
 
+    #Production make data start
+    production=Production.objects.all()
+
     context = {
         #title start
         'title':title,
+
+        #production stat
+        'production':production,
     }
 
     return render(request,'mainapp/production.html',context)

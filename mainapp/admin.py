@@ -54,6 +54,17 @@ class CultureTimelineAdmin(admin.ModelAdmin):
 admin.site.register(Timeline, CultureTimelineAdmin)
 
 
+class ProductionAdmin(admin.ModelAdmin):
+    list_display = ['p_id', 'p_name', 'p_subject', 'p_introduce', 'p_images','p_link']
+    list_filter = ['p_id']
+    search_fields = ['p_name']
+    list_per_page = 10
+    fieldsets = [
+        ('作品名称', {'fields': ['p_id', 'p_name']}),
+        ('作品介绍', {'fields': ['p_subject', 'p_introduce']}),
+        ('封面链接', {'fields': ['p_images', 'p_link']}),
+    ]
+admin.site.register(Production, ProductionAdmin)
 
 class Joinus_headleJoinusDataAdmin(admin.ModelAdmin):
     list_display = ['jd_name', 'jd_phone', 'jd_professional', 'jd_interest']

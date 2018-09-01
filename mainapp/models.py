@@ -1,3 +1,4 @@
+#-*- coding:utf-8 -*-
 from django.db import models
 
 # Create your models here.
@@ -104,7 +105,7 @@ class HomePageContent(models.Model):
 
 
 
-
+#------------------------------------------------------------
 #Culture Timeline table start
 class Timeline(models.Model):
     tl_id=models.IntegerField(primary_key=True)
@@ -116,8 +117,23 @@ class Timeline(models.Model):
     def __unicode__(self):
         return u'%s'%self.tl_name
 
+#----------------------------------------------------------------
+#Production Data tables start
+class Production(models.Model):
+    p_id=models.IntegerField(primary_key=True)
+    p_name=models.CharField(max_length=20,unique=True)
+    p_subject=models.CharField(max_length=30,default='Headder')
+    p_introduce=models.TextField()
+    p_images=models.p_images=models.ImageField(upload_to='production')
+    p_link=models.CharField(max_length='300',default='')
 
+    def __unicode__(self):
+        return u'%s' %self.p_name
 
+    class Mate:
+        db_table='production'
+
+#------------------------------------------------------------------
 #Joinus Data table start
 class JoinusData(models.Model):
     jd_name = models.CharField(max_length=10, default='')
