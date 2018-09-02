@@ -24,7 +24,9 @@
     <div class="carousel-inner">
         <div class="item active">
             {% for plo in photolbumone %}
-            <img src="/static/media/{{ plo.pl_images }}" alt="First slide">
+	    <a href="{% url 'joinus' %}">
+                <img src="/static/media/{{ plo.pl_images }}" alt="First slide">
+	    </a>
             <div class="carousel-caption"><h3>{{ plo.pl_title }}</h3></div>
             {% endfor %}
         </div>
